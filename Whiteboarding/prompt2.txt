@@ -6,3 +6,44 @@
   Input: [7, 9, "hi", 12, "hi", 7, 53]
 
   Output: [7, 9, "hi", 12, 53]
+
+
+  // Remove duplicates from array 
+
+  // Questions:
+    // Empty array?
+
+  // Psedocoding:
+    // function w/ array
+    // loop through array
+    // need another loop to find duplicates
+    // if duplicate: remove
+    // else check next string
+    // return array without duplicates
+
+
+  // without filter() and recursion
+
+      function removeDulicates(array) {
+        let outputArray = [];   //empty array
+
+        for (let i = 0; i < array.length; i ++ ) {  //loop through if array has the element
+
+          if (outputArray.includes(array[i]) === false) {
+            outputArray.push(array[i]); //push to a outputArray if element is not duplicates
+          }
+        }
+        return outputArray;
+      }
+
+  //with filter
+
+    function dedupeFilter(array) {
+      let filteredArray = array.filter(function(element, index) {
+        return array.indexOf(element) === index;
+      });
+      return filteredArray;
+    }
+
+
+     
