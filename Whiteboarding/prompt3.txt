@@ -4,4 +4,76 @@ Write an algorithm that takes a string with repeated characters and compresses t
 Example
 Input: "aaabccdddda"
 
-Output: "3ab2c4da"
+Output: "4a1b2c4d"
+
+
+// without recursion
+      function compressString(string){
+        let input= string.split("");
+        
+        let arrayNew=[];
+        
+        for( let i=0;i< input.length ;i++){
+          let num=1;
+          for(let j=i+1 ; j< input.length ;j++){
+            if(input[i]==input[j]){
+              num++;
+              }
+            } 
+          if(!arrayNew.includes(input[i])){
+          arrayNew.push(num);
+          arrayNew.push(input[i]); 
+          }
+        }
+        return arrayNew.join("");
+      }
+
+    // TEST:
+      // > compressString("aaabccdddda");
+      // < "4a1b2c4d"
+
+
+      function compressString(string) {
+        let letterletterCount = 1;                // each letter occur at least 1
+        let outputString = "";        // output string to return
+
+        for (let i = 0; i < string.length; i++) {
+          if(string[i] === string[i + 1]) {   // if current index is equal to next index then +1
+            letterletterCount++;
+
+          } else {                            // else current index is not equal to next index
+            if (letterletterCount === 1) {    // letterletterCount = 1 then add index to outputString
+              outputString += string[i];
+
+            } else {    // add letterletterCount to the string index & add to output string
+              outputString += letterletterCount + string[i]
+            }
+            letterletterCount = 1;      // reset letterletterCount fo next time
+          }
+        }
+        return outputString;      // return outputString
+      }
+    
+    // TEST:
+      //  > compressString("aaabccdddda");
+      //  < '3ab2c4da'
+
+
+//with recursion
+
+        const compressStringRecurse = (string) => {
+          if (string.length === 0) return string;
+          let letterCount = 1;
+
+          for (let i = 0; string[i] === string[i+1]; i++) letterCount++;
+          if (letterCount > 1) {
+            return letterCount.toString() + string[0] + compressStringRecurse(string.substring(letterCount));
+          } else {
+            return string[0] + compressStringRecurse(string.substring(1));
+          }
+        };
+
+      // TEST:
+        // >  compressStringRecurse("aaabccdddda");
+        // <  '3ab2c4da'
+   

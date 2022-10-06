@@ -15,8 +15,7 @@
 
   // Psedocoding:
     // function w/ array
-    // loop through array
-    // need another loop to find duplicates
+    // need  loop to find duplicates
     // if duplicate: remove
     // else check next string
     // return array without duplicates
