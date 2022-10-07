@@ -2,20 +2,21 @@
 
   Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
 
-  Example
+  Example:
   Input: [7, 9, "hi", 12, "hi", 7, 53]
-
   Output: [7, 9, "hi", 12, 53]
 
 
   // Remove duplicates from array 
+  // No filter()
 
   // Questions:
     // Empty array?
+    // javascript?
 
   // Psedocoding:
     // function w/ array
-    // need  loop to find duplicates
+    // need loop to find duplicates
     // if duplicate: remove
     // else check next string
     // return array without duplicates
@@ -24,16 +25,23 @@
   // without filter() and recursion
 
       function removeDulicates(array) {
-        let outputArray = [];   //empty array
+        let outputArray = [];                       // empty array 
 
-        for (let i = 0; i < array.length; i ++ ) {  //loop through if array has the element
+        for (let i = 0; i < array.length; i ++ ) {  // loop to find duplicates [7,9,"hi",12,"hi",7,53]
 
-          if (outputArray.includes(array[i]) === false) {
-            outputArray.push(array[i]); //push to a outputArray if element is not duplicates
+          if (! outputArray.includes(array[i])) {   // if not duplicates
+            outputArray.push(array[i]); //push to a outputArray if element is NOT duplicates
           }
         }
-        return outputArray;
+        return outputArray;         // [7,9,"hi",12,53]
       }
+
+
+       // TEST:
+        // > removeDulicates([7, 9, "hi", 12, "hi", 7, 53]);
+        // < [7, 9, "hi", 12, 53]
+       
+
 
   //with filter
 
@@ -43,6 +51,10 @@
       });
       return filteredArray;
     }
+
+    // TEST:
+        // > removeDulicates([7, 9, "hi", 12, "hi", 7, 53]);
+        // < [7, 9, "hi", 12, 53]
 
 
      

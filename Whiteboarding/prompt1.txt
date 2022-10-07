@@ -6,20 +6,21 @@
 
   Example
   Input: "Jasmine Ann Jones"
-
   Output: "Jasmine%20Ann%20Jones"
 
 
 
   // Spaces in string: replace with %20
   // Return all space in a string with %20
-  
-  // Input: "Jasmine Ann Jones"
-  // Output: "Jasmine%20Ann%20Jones"
+
+  // EXAMPLE:
+    // Input: "Jasmine Ann Jones"
+    // Output: "Jasmine%20Ann%20Jones"
 
   // Questions:
-  // Always string?
-  // Empty string: return %20?
+    // javascript?
+    // Always string?
+    // Empty string: return %20?
 
   // Psedocoding:
     // add loop to check for characters & empty spaces 
@@ -32,21 +33,35 @@
   // without recursion
 
       function replaceSpace(string) {
-        let stringOutput = "";  // empty string
+        let stringOutput = "";                       // empty string
 
         for (let i = 0; i < string.length; i ++ ) {  // look for spaces
           if (string[i] === " ") {                   // replace spaces w/ %20
             stringOutput += "%20";
           } else {
-            stringOutput += string[i];              // else return character
+            stringOutput += string[i];                // else character
           }
         }
-        return stringOutput;
+        return stringOutput;                          // return Strings to URLs
       }
 
-      // Check
-      // replaceSpace(" ");
-      // replaceSpace("Jasmine Ann Jones");
+
+      // TEST:
+        // > replaceSpace(" ");
+        // < ' '
+
+        // > replaceSpace("Jasmine Ann Jones");
+        // < 'Jasmine%20Ann%20Jones'
+
+
+
+
+
+
+
+
+
+
 
 
   // recursion

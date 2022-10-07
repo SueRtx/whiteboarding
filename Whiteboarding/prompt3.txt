@@ -30,28 +30,29 @@ Output: "4a1b2c4d"
 
     // TEST:
       // > compressString("aaabccdddda");
-      // < "4a1b2c4d"
+      // < "3ab2c4da"
 
+// without recursion
 
       function compressString(string) {
-        let letterletterCount = 1;                // each letter occur at least 1
-        let outputString = "";        // output string to return
+        let letterCount = 1;                  // each letter occurs at least 1
+        let outputString = "";                // output string to return
 
         for (let i = 0; i < string.length; i++) {
-          if(string[i] === string[i + 1]) {   // if current index is equal to next index then +1
-            letterletterCount++;
+          if(string[i] === string[i + 1]) {   // if current index is equal to next index then + 1
+            letterCount++;
 
           } else {                            // else current index is not equal to next index
-            if (letterletterCount === 1) {    // letterletterCount = 1 then add index to outputString
+            if (letterCount === 1) {          // letterCount = 1 then add index to outputString
               outputString += string[i];
 
-            } else {    // add letterletterCount to the string index & add to output string
-              outputString += letterletterCount + string[i]
+            } else {                          // add letterCount to the string index & add to outputString
+              outputString += letterCount + string[i]
             }
-            letterletterCount = 1;      // reset letterletterCount fo next time
+            letterCount = 1;                  // reset letterletterCount fo next time
           }
         }
-        return outputString;      // return outputString
+        return outputString;                 // return outputString
       }
     
     // TEST:
@@ -59,7 +60,9 @@ Output: "4a1b2c4d"
       //  < '3ab2c4da'
 
 
-//with recursion
+
+
+// with recursion
 
         const compressStringRecurse = (string) => {
           if (string.length === 0) return string;

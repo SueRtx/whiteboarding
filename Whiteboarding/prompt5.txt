@@ -18,7 +18,7 @@ Question #5: Array Sorting
 
 
 function sortArray(array){
-  for (let i = 0; i < array. length; i++) {   // loop to sort array
+  for (let i = 0; i < array. length; i++) {     // loop to sort array
    for (let j = i + 1; j < array. length; j++) { // loop to check 2nd number is greater than 1st number
 
      if(array[i] > array[j]){   // if 1st num > 2nd num switch place
@@ -30,6 +30,8 @@ function sortArray(array){
   }
   return array;
 }
+
+
 
 // TEST
   // > sortArray([9, 2, 7, 12]);
