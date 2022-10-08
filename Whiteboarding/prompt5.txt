@@ -15,17 +15,33 @@ Question #5: Array Sorting
   Output: [2, 7, 9, 12]
 
 
+// sorts an array without using the sort() method
+
+// EXAMPLE:
+  // Input: [9, 2, 7, 12]
+  // Output: [2, 7, 9, 12]
+
+// Questions:
+  // javascript?
+  // always integer?
+
+
+// Psedocoding:
+  // add loop to to sort array 
+  // add another loop to check 2nd number is greater than 1st number
+  // if 1st num > 2nd num switch place
+  // return sorted array
 
 
 function sortArray(array){
   for (let i = 0; i < array. length; i++) {     // loop to sort array
    for (let j = i + 1; j < array. length; j++) { // loop to check 2nd number is greater than 1st number
 
-     if(array[i] > array[j]){   // if 1st num > 2nd num switch place
-       temporary = array[i];    //  temp = 1st num
-       array[i] = array[j];     //  1st num = 2nd num                        
-       array[j] = temporary;    //  2nd num = 1st num                    
-     }
+      if(array[i] > array[j]){   // if 1st num > 2nd num switch place
+        temporary = array[i];    //  temp = 1st num
+        array[i] = array[j];     //  1st num = 2nd num                        
+        array[j] = temporary;    //  2nd num = 1st num                    
+      }
     }                          
   }
   return array;

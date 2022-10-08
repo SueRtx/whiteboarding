@@ -3,8 +3,31 @@ Write an algorithm that takes a string with repeated characters and compresses t
 
 Example
 Input: "aaabccdddda"
+Output: "3ab2c4da"
 
-Output: "4a1b2c4d"
+
+// takes a string with repeated characters and compresses them
+// use a number to show how many times the repeated character has been compressed
+
+// EXAMPLE:
+  // Input: "aaabccdddda"
+  // Output: "3ab2c4da"
+
+// Questions:
+  // javascript?
+  // special character?
+  // always string?
+
+
+// Psedocoding:
+   // add loop to check for repeated characters
+   // need letter count & output string
+   // compare each index character to next index character
+   //  if equal: add to letter count  / else:  add number & letter to output string
+   //  reset letter count to check for next block of characters
+   //  return compressing string
+
+urn URL string
 
 
 // without recursion
@@ -30,16 +53,16 @@ Output: "4a1b2c4d"
 
     // TEST:
       // > compressString("aaabccdddda");
-      // < "3ab2c4da"
+      // < "4ab2c4d"
 
 // without recursion
 
       function compressString(string) {
         let letterCount = 1;                  // each letter occurs at least 1
-        let outputString = "";                // output string to return
+        let outputString = "";                // empty output string to return
 
         for (let i = 0; i < string.length; i++) {
-          if(string[i] === string[i + 1]) {   // if current index is equal to next index then + 1
+          if (string[i] === string[i + 1]) {   // if current i is = to next i then +1
             letterCount++;
 
           } else {                            // else current index is not equal to next index

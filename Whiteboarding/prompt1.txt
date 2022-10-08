@@ -35,11 +35,11 @@
       function replaceSpace(string) {
         let stringOutput = "";                       // empty string
 
-        for (let i = 0; i < string.length; i ++ ) {  // look for spaces
-          if (string[i] === " ") {                   // replace spaces w/ %20
+        for (let i = 0; i < string.length; i ++ ) {  // loop to find empty spaces
+          if (string[i] === " ") {                   // replace empty spaces w/ %20
             stringOutput += "%20";
           } else {
-            stringOutput += string[i];                // else character
+            stringOutput += string[i];                // else keep character
           }
         }
         return stringOutput;                          // return Strings to URLs
@@ -52,14 +52,6 @@
 
         // > replaceSpace("Jasmine Ann Jones");
         // < 'Jasmine%20Ann%20Jones'
-
-
-
-
-
-
-
-
 
 
 
