@@ -58,17 +58,25 @@
 
   // recursion
 
-      const recursivereplaceSpace = (string) => {
-        stringOutput = "";
-        
-        if (string[i] === " ") {
-          stringOutput += "%20";
-          return recursivereplaceSpace(string.substring(1));
-        } else {
-          stringOutput += string.charAt(0);
-          return recursivereplaceSpace(string.substring(1));
+      function recursivereplaceSpace(string) {
+        if (string === "") {                            // empty string 
+          return string;                                  
+      
+        } else if (string.substring(0,1) === " " ) {    // recursion condition
+            return "%20" + recursivereplaceSpace(string.substring(1));
+          } else {
+            return string.substring(0,1) + recursivereplaceSpace(string.substring(1));
+          }
         }
-      }   
+
+
+  // TEST:
+          // > recursivereplaceSpace(" ");
+          // < ' '
+
+          // > replaceSpace("Jasmine Ann Jones");
+          // < 'Jasmine%20Ann%20Jones'
+
 
 
 
