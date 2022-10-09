@@ -32,7 +32,7 @@
   
   
   
-  // without recursion  
+  ## Solution without recursion  
   
       function replaceSpace(string) {  
         let stringOutput = "";                       // empty string  
@@ -53,6 +53,3 @@
         // < 'Jasmine%20Ann%20Jones'  
 
 
-
-
-  
