@@ -10,7 +10,7 @@
   * Solve the problem with and without recursion.
 
 ## Whitebording
-![whiteboarding view](img/whiteboarding.png "whiteboarding view")  
+![whiteboarding view](img/whitebording.png "whiteboarding view")  
   
   // Spaces in string: replace with %20  
   // Return all space in a string with %20  
